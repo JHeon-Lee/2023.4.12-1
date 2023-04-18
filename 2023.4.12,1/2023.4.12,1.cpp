@@ -15,6 +15,14 @@ int Add(int *a, int *b)
     return *a + *b;
 }
 
+int Add2(int a, int b)
+{
+    a += 10;
+    b -= 5;
+
+    return a + b;
+}
+
 /*
     포인터란?
     주소값을 가리키는 값
@@ -42,7 +50,7 @@ int main()
     srand(time(NULL));
     rand();
 
-    int nA, nB, nC;
+    int nA, nB, nC, nD;
 
     // int* pA = &nA; 포인터 지정
     int *pA = new int; // new 연산을 통해서 메모리에 공간을 할당
@@ -55,11 +63,14 @@ int main()
     nA = 10;
     nB = 5;
     nC = Add(pA, pB);
+    nD = Add2(nA, nB);
 
     //cout << nA << ", " << nB << endl;
     //cout << &nA << endl;
     cout << *pA << ", " << *pB << endl;
     cout << nC << endl;
+    cout << nA << ", " << nB << endl;
+    cout << nD << endl;
 
     // & : 메모리 주소값을 보여준다.
 
